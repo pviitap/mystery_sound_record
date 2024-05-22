@@ -107,7 +107,7 @@ class Recorder:
         #print(f"The estimated pitch is {pitch:.2f} Hz")
         frequency = self.get_dominant_frequency(audio_data,RATE)
         print(f"The dominant frequency is {frequency:.2f} Hz")
-        if frequency > MIN_HZ and frequency > MAX_HZ:
+        if frequency > MIN_HZ and frequency < MAX_HZ:
             print("mystery sound possibly detected")
             self.write(b''.join(rec))
         else:
